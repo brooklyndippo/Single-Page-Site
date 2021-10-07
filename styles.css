@@ -1,0 +1,97 @@
+
+/*Stretch goal: import & use own font
+
+@font-face {
+    font-family: Quattrocentro;
+    src: "fonts/QuattrocentoSans-Regular.ttf";
+  }
+  */
+
+
+body{
+    background-color: #B3B9AF;
+    font-family: Helvetica;
+    letter-spacing: 0.05em;
+    font-weight: lighter;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". t t t t t t t t t t ."
+    ". p p p p . . . . . . ."
+    ". . . . . . g g g g g ."
+    ". b b b b . . . . . . ."
+    ". . . . . . h h h h h ."
+    ". c c c c . . . . . . ."
+    ". . r r r r r r r r . ."
+    ". . . x x x x x x . . ."
+    ". . . y y y y y y . . ."
+    ". f f f f f f f f f f .";
+}
+
+p{
+    font-family: 'Gill Sans'
+}
+
+.cards p {
+    font-weight: normal;
+}
+
+/*Page Title*/
+header{
+    grid-area: t;
+}
+
+/*Plant*/
+#plant{
+    grid-area: p;
+}
+
+/*Growing*/
+#growing{
+    grid-area: g;
+}
+
+/*Pests & Disease*/
+#bugs{
+    grid-area: b;
+}
+
+/*Harvest*/
+#harvest{
+    grid-area: h;
+}
+
+/*Cooking*/
+#cooking{
+    grid-area: c;
+}
+
+/*Recipe*/
+#recipe{
+    grid-area: r;
+    background-color: whitesmoke;
+}
+
+/*More Recipes*/
+#more-recipes{
+    grid-area: x;
+}
+
+/*More Plants*/
+#more-plants{
+    grid-area: y;
+}
+
+/*Footer*/
+footer{
+    grid-area: f;
+}
+
+
+/*SECTION 
+create a minimum height of 400px
+add 20px of padding all around*/
+section{
+    min-height: 400px;
+    padding: 20px;
+}
