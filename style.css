@@ -157,6 +157,64 @@ ol {
 #recipe h4, img{
     padding-top: 30px;
 }
+
+
+
+/*--------------------------------------------------------------------*/
+/*STYLE THE MORE CARDS*/
+
+/*MORE:
+*/
+
+#more {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 30vh;
+}
+
+#more h4{
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+.cards img {
+    object-fit: cover;
+    height: 60%;
+    width: 70%;
+    overflow: hidden;
+}
+
+
+.card {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.card p {
+    max-width: 80%
+}
+
+
+
+
 /*--------------------------------------------------------------------*/
 /*STYLE THE FOOTER*/
 
