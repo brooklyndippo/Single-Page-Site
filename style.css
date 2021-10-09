@@ -56,8 +56,8 @@ section{
 h1{
     width: 100vw;
     /*match height and line-height for vertical alignment*/
-    height: 100vh;
-    line-height: 100vh;
+    height: 90vh;
+    line-height: 90vh;
     text-align: center;
     font-size: 150px;
     font-weight: 300;
@@ -145,6 +145,26 @@ img{
     height: 100vh;
 }
 
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    bottom: 8vh;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+nav ul, nav li, nav a{
+    text-decoration: none;
+    font-size: x-large;
+    z-index: 1;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+nav a:hover{
+    color: black
+}
 
 /*--------------------------------------------------------------------*/
 /*PLANT section*/
