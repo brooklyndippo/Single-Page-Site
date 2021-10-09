@@ -101,12 +101,26 @@ h3{
 }
 
 h4{
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.2em;
+    text-transform: uppercase;
 }
 
 p{
     font-size: 1.3em;
+}
+
+li {
+    margin: auto;
+    overflow-wrap: normal;
+    padding-top: 5px;
+    font-size: 1.1em;
+}
+
+ol {
+    margin: auto;
+    padding-top: 5px;
+    font-size: 1.05em;
 }
 
 
@@ -115,17 +129,34 @@ p{
 /*--------------------------------------------------------------------*/
 /*STYLE THE RECIPE*/
 
-
-/*Blog Hero Header:
-- make it the full width of the screen
- */
-li{
-    max-width: 60%;
-    overflow-wrap: normal;
+/*Recipe:
+- set background color to whitesmoke, border radius to 30px
+- make the width 70vw, top/bottom paddings 10vh
+- change the display to a flex column
+*/
+#recipe{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
+/*Style the children contents inside Recipe:
+- set the left and right padding to 10vw
+- set the line height to 2em for ease of reading
+*/
+#recipe h3, h4, ul, ol, img {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    line-height: 2em;
+}
 
-
+#recipe h4, img{
+    padding-top: 30px;
+}
 /*--------------------------------------------------------------------*/
 /*STYLE THE FOOTER*/
 
