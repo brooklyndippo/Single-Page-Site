@@ -1,0 +1,257 @@
+
+/*Stretch goal: import & use own font
+
+@font-face {
+    font-family: Quattrocentro;
+    src: "fonts/QuattrocentoSans-Regular.ttf";
+  }
+
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Quattrocento Sans', sans-serif;
+  */
+
+
+body{
+    object-fit: cover;
+    background-color: #B3B9AF;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "t t t t t t t t t t t t"
+    ". p p p p p p p . . . ."
+    ". . . . . . g g g g g ."
+    ". b b b b . . . . . . ."
+    ". . . . . . h h h h h ."
+    ". c c c c c c c c . . ."
+    ". . r r r r r r r r . ."
+    ". . x x x x x x x x . ."
+    ". . x x x x x x x x . ."
+    "f f f f f f f f f f f f";
+}
+
+/*
+grid-template-areas: 
+"t t t t t t t t t t t t"
+". a a a a a a a a . . ."
+". . b b b b b b b . . ."
+". . c c c c . d d d . ."
+". . c c c c . . e . . ."
+". . . . . . . . . . . ."
+". . . . . . g g g g g ."
+". . . . . . . p p p . ."
+". . h h h h . p p p . ."
+". . h h h h . p p p . ."
+". . . . . . . . . . . ."
+". . . . i i i i . . . ."
+". j j j j j . . . . . ."
+". . . . . . . k k k k ."
+". . . . . . l l l l . ."
+". . . . . . . . . . . ."
+". . m m m . . n n n . ."
+". . o o o . . n n n . ."
+". . . . . . . . . . . ."
+". . x x x x x x x x . ."
+". . x x x x x x x x . ."
+"f f f f f f f f f f f f";
+*/
+
+
+
+.cards p {
+    font-weight: normal;
+}
+
+/*Page Title*/
+header{
+    grid-area: t;
+    height: 100vh;
+    width:100vw;
+    /*Style the background image*/
+    background-image: url("images/cucumber-2.jpeg");
+    /*attachment creates parallax scrolling effect*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+}
+
+header h1 {
+    /*Style the title
+    horizontal align*/
+    text-align: center;
+     /*vertical align*/
+    padding-top: 50vh;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-family: Tahoma;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    color: whitesmoke;
+}
+
+h2, h3, h4 {
+    font-family: 'Poppins';
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 5em;
+}
+
+h3{
+    font-size: 4em;
+}
+
+h4{
+    font-weight: 400;
+}
+
+/*Plant*/
+#plant{
+    grid-area: p;
+    margin-top: 10vh;
+    justify-content: stretch;
+}
+
+#plant img {
+    object-fit: cover;
+    width: 120%;
+}
+
+/*Growing*/
+#growing{
+    grid-area: g;
+}
+
+/*Pests & Disease*/
+#bugs{
+    grid-area: b;
+}
+
+/*Harvest*/
+#harvest{
+    grid-area: h;
+}
+
+/*Cooking*/
+#cooking{
+    grid-area: c;
+}
+
+#cooking img{
+    width: 30vw;
+    align-content: flex-end;
+}
+
+/*Recipe*/
+#recipe {
+    grid-area: r;
+    display:flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    justify-content: center;
+    padding: 80px 40px;
+    border-radius: 30px;
+}
+
+#recipe img, h2, h3, h4, li {
+    width: 80%;
+    margin: 20px auto;
+    object-fit: cover;
+    object-position: 80%;
+    justify-content: center;
+}
+
+#recipe h1, h2 {
+    text-align: center;
+}
+
+#recipe-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 2em;
+    border-bottom: black;
+    border-width: 4px;
+    border-style: none none solid none;
+}
+
+
+
+/*More Recipes*/
+#more{
+    grid-area: x;
+    margin-top: 20vh;
+}
+
+
+/*Footer*/
+footer{
+    grid-area: f;
+    margin: auto;
+    text-align: center;
+    background-color: #f2ede9;
+    width: 100vw;
+    height: 40vh;
+    font-size: .3em;
+    justify-content: center;
+    padding-top: 20vh;
+}
+
+footer p{
+    font-size:medium
+}
+
+
+/*SECTION 
+create a minimum height of 400px
+add 20px of padding all around*/
+section{  
+    min-height: 100vh;
+    padding: 0px 20px 100px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.cards img {
+    object-fit: cover;
+    height: 60%;
+    width: 80%;
+    overflow: hidden;
+}
+
+
+.card {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.card p {
+    max-width: 80%
+}
+
+.card :hover{
+    transform: scale(1.1)
+}
