@@ -14,52 +14,26 @@ font-family: 'Quattrocento Sans', sans-serif;
 
 
 body{
+    width: 100vw;
     object-fit: cover;
     background-color: #B3B9AF;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.05em;
     font-weight: 300;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
     grid-template-areas: 
     "t t t t t t t t t t t t"
-    ". p p p p p p p . . . ."
-    ". . . . . . g g g g g ."
-    ". b b b b . . . . . . ."
-    ". . . . . . h h h h h ."
-    ". c c c c c c c c . . ."
+    ". p p p p p p p p p p ."
+    ". g g g g g g g g g g ."
+    ". b b b b b b b b b b ."
+    ". h h h h h h h h h h ."
+    ". c c c c c c c c c c ."
     ". . r r r r r r r r . ."
     ". . x x x x x x x x . ."
     ". . x x x x x x x x . ."
     "f f f f f f f f f f f f";
 }
-
-/*
-grid-template-areas: 
-"t t t t t t t t t t t t"
-". a a a a a a a a . . ."
-". . b b b b b b b . . ."
-". . c c c c . d d d . ."
-". . c c c c . . e . . ."
-". . . . . . . . . . . ."
-". . . . . . g g g g g ."
-". . . . . . . p p p . ."
-". . h h h h . p p p . ."
-". . h h h h . p p p . ."
-". . . . . . . . . . . ."
-". . . . i i i i . . . ."
-". j j j j j . . . . . ."
-". . . . . . . k k k k ."
-". . . . . . l l l l . ."
-". . . . . . . . . . . ."
-". . m m m . . n n n . ."
-". . o o o . . n n n . ."
-". . . . . . . . . . . ."
-". . x x x x x x x x . ."
-". . x x x x x x x x . ."
-"f f f f f f f f f f f f";
-*/
-
 
 
 .cards p {
@@ -111,13 +85,57 @@ h3{
 
 h4{
     font-weight: 400;
+    font-size: 1.2em;
 }
 
+p{
+    font-size: 1.3em;
+}
+/*-------------------------------------*/
 /*Plant*/
 #plant{
     grid-area: p;
     margin-top: 10vh;
-    justify-content: stretch;
+    text-align: left;  
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat (6, 1fr);
+    grid-template-areas: 
+    "a a a a a a"
+    ". b b b b b"
+    "c c c . . ."
+    "c c c . d d"
+    "c c c . e e"
+    "c c c . . ."
+
+}
+
+#plant #a {
+    grid-area: a;
+    align-items: flex-start;  
+}
+#plant #b {
+    grid-area: b;
+}
+#plant #c {
+    grid-area: c;
+}
+#plant #d {
+    grid-area: d;
+    font-size: 1.5em;
+    z-index: 1;
+}
+#plant #e {
+    grid-area: e;
+    height:fit-content;
+    width: 60%;
+    padding: 10px;
+    background-color: darkslategray ;
+    color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    z-index: 1;
 }
 
 #plant img {
@@ -125,45 +143,122 @@ h4{
     width: 120%;
 }
 
+
+/*-------------------------------------*/
 /*Growing*/
 #growing{
     grid-area: g;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    ". a"
+    "b c"
+    "b c";
 }
 
-/*Pests & Disease*/
-#bugs{
+#growing #g{
+    grid-area: a;
+}
+
+#growing #h{
     grid-area: b;
 }
 
-/*Harvest*/
-#harvest{
-    grid-area: h;
+#growing #p{
+    grid-area: c;
+    max-width: 100%;
+    max-height: 80vh;
 }
 
+/*-------------------------------------*/
+
+
+/*-------------------------------------*/
+/*Pests & Disease*/
+#bugs{
+    height: 80vh;
+    grid-area: b;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas:
+    "a a a . . ."
+    ". b b b b ."
+    ". c c c c c";
+}
+
+#bugs #ladybug{
+    grid-area: a;
+    height: 40vh;
+    overflow: visible;
+    width: 80%;
+    object-fit: cover;
+    margin-bottom: -500px;
+    padding: 0px;
+}
+
+#bugs #i{
+    grid-area: b;
+    z-index: 1;
+}
+
+#bugs #j {
+    grid-area: c;
+}
+
+/*-------------------------------------*/
+
+/*-------------------------------------*/
+/*Harvest*/
+#harvest{
+    height: 80vh;
+    grid-area: h;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas: 
+    ". k k k ."
+    ". l l l .";
+}
+
+#harvest #k {
+    grid-area: k;
+    height: min-content;
+}
+
+#harvest #l {
+    grid-area: l;
+}
+/*-------------------------------------*/
+
+/*-------------------------------------*/
 /*Cooking*/
 #cooking{
     grid-area: c;
 }
 
 #cooking img{
-    width: 30vw;
-    align-content: flex-end;
+    width: 50vw;
 }
+/*-------------------------------------*/
 
+/*-------------------------------------*/
 /*Recipe*/
 #recipe {
     grid-area: r;
     display:flex;
     flex-direction: column;
     background-color: whitesmoke;
-    justify-content: center;
+    align-content: center;
     padding: 80px 40px;
     border-radius: 30px;
 }
 
 #recipe img, h2, h3, h4, li {
-    width: 80%;
-    margin: 20px auto;
+    margin: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
     object-fit: cover;
     object-position: 80%;
     justify-content: center;
@@ -189,25 +284,37 @@ h4{
 #more{
     grid-area: x;
     margin-top: 20vh;
+    width: 100%;
+}
+
+#more h4{
+    width: 100%;
 }
 
 
 /*Footer*/
 footer{
     grid-area: f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: auto;
     text-align: center;
     background-color: #f2ede9;
     width: 100vw;
     height: 40vh;
     font-size: .3em;
-    justify-content: center;
-    padding-top: 20vh;
+    padding-top: 15vh;
 }
 
 footer p{
     font-size:medium
 }
+
+footer h2, h3 {
+    width: 100vw;
+}
+
 
 
 /*SECTION 
@@ -215,9 +322,7 @@ create a minimum height of 400px
 add 20px of padding all around*/
 section{  
     min-height: 100vh;
-    padding: 0px 20px 100px 0px;
-    display: flex;
-    flex-direction: column;
+    padding: 0px 0px 100px 0px;
 }
 
 
