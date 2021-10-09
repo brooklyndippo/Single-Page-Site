@@ -9,6 +9,9 @@ headache for me, so I decided to manually set each of these
 later on. */
 * { padding: 0; margin: 0; }
 
+
+
+/*--------------------------------------------------------------------*/
 /*GLOBAL STYLE ATTRIBUTES*/
 
 /*BODY:
@@ -17,6 +20,10 @@ later on. */
 - set font family to poppins, weight to 300, spacing 1px
 - set letter spacing to 
 - hide overflow on the x axis*/
+
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     margin: auto;
@@ -44,17 +51,79 @@ section{
 }
 
 
+/*Style the h1*/
+
+h1{
+    width: 100vw;
+    /*match height and line-height for vertical alignment*/
+    height: 90vh;
+    line-height: 90vh;
+    text-align: center;
+    font-size: 150px;
+    font-weight: 300;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 6em;
+    font-weight: 300;
+}
+
+h3{
+    font-size: 4em;
+}
+
+h4{
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 1.3em;
+}
+
+li {
+    margin: auto;
+    overflow-wrap: normal;
+    padding-top: 5px;
+    font-size: 1.1em;
+}
+
+ol {
+    margin: auto;
+    padding-top: 5px;
+    font-size: 1.05em;
+}
 
 /*IMAGE:
 - set the default objecct-fit to cover
  */
 img{
     object-fit: cover;
-    /*DELETE LATER*/
-    width: 30%;
-    height: 60%;
 }
 
+.anchor {
+    position: -webkit-sticky;
+    position: sticky;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: teal;
+    left: 95vw;
+    top: 3vh;
+    border-radius: 100%;
+    padding: 20px 10px;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.anchor:hover{
+    padding: 28px 15px;
+    left: 94.7vw;
+    top: 2vh;
+    font-size: 1.1em;
+}
 
 
 /*--------------------------------------------------------------------*/
@@ -76,53 +145,322 @@ img{
     height: 100vh;
 }
 
-/*Style the h1*/
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    bottom: 8vh;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
 
-h1{
-    width: 100vw;
-    /*match height and line-height for vertical alignment*/
-    height: 100vh;
-    line-height: 100vh;
-    text-align: center;
-    font-size: 150px;
-    font-weight: 300;
-    color: whitesmoke;
+nav ul, nav li, nav a{
+    text-decoration: none;
+    font-size: x-large;
+    z-index: 1;
     text-transform: uppercase;
+    color: whitesmoke;
+}
+
+nav a:hover{
+    color: black
+}
+
+/*--------------------------------------------------------------------*/
+/*PLANT section*/
+
+
+/*Plant Section:
+-create a 5 column grid
+*/
+
+#plant {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+    "t t t t ."
+    ". s s . ."
+    ". i i p p"
+    ". i i b b";
+}
+
+#plant #a{
+    grid-area: t;
+}
+
+#plant #b{
+    grid-area: s;
+    font-size: 3em;
+}
+
+#plant #c, #plant img{
+    grid-area: i;
+    width: 110%;
+    height: 60vh;
+    padding: 0px;
+}
+
+#plant #d{
+    grid-area: p;
+    padding-top: 20vh;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+#plant #e, button{
+    grid-area: b;
+    height: 5vh;
+    color: whitesmoke;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 1.7em;
+    background-color: darkslategray;
+    margin-bottom: 70%;
+    z-index: 1;
+}
+
+#plant #e:hover{
+    background-color:dimgray;
+}
+
+
+/*--------------------------------------------------------------------*/
+/*GROWING section*/
+
+
+/*Growing Section:
+-create a 5 column grid
+*/
+
+#growing {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+    ". . . . ."
+    "t t . i i"
+    "p p p i i"
+}
+
+#growing #g{
+    grid-area: t;
+    padding-top: 50%;
+}
+
+#growing #h{
+    grid-area: p;
+    padding-left: 5em;    
+    padding-right: 10em;
+}
+
+#growing #p, #growing img{
+    grid-area: i;
+    width: 100%;
+    height: 80vh;
+    margin-top: 10vh;
+}
+
+/*--------------------------------------------------------------------*/
+/*TENDING section*/
+
+
+/*Tending Section:
+-create a 5 column grid
+*/
+
+#bugs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+    "t t t t ."
+    ". i i . ."
+    "p p p . ."
+}
+
+#bugs #i{
+    grid-area: t;
+    z-index: 1;
+}
+
+#bugs #j{
+    grid-area: p;
+    padding-left: 5em;    
+    padding-right: 10em;
+}
+
+#bugs #ladybug{
+    grid-area: i;
+    background-image: url(images/ladybug.jpeg);
+    background-attachment: fixed;
+    background-position: bottom 10% left 10%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 50vh;
+    border-radius: 100%;
+}
+
+
+/*--------------------------------------------------------------------*/
+/*HARVEST section*/
+
+
+/*Harvest Section:
+-create a 5 column grid
+*/
+
+#harvest {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+    ". . . . ."
+    ". . t t t"
+    ". p p p ."
+    ". . . . ."
+}
+
+#harvest #k {
+    grid-area: t;
+}
+
+#harvest #l {
+    grid-area: p;
 }
 
 
 
-h2{
-    font-size: 5em;
+/*--------------------------------------------------------------------*/
+/*COOKING section*/
+
+
+/*Cooking Section:
+-create a 5 column grid
+*/
+
+#cooking {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    ". . i i"
+    "t t i i"
+    "p p i i"
+    ". . i i"
 }
 
-h3{
-    font-size: 4em;
+#cooking #m {
+    grid-area: t;
 }
 
-h4{
-    font-weight: 400;
-    font-size: 1.2em;
+#cooking #o {
+    grid-area: p;
+    padding-right: 10vw;
 }
 
-p{
-    font-size: 1.3em;
+#cooking #n, #cooking img{
+    grid-area: i;
+    min-width: 100%;
+    height: 80vh;
+    margin-top: 10vh;
 }
-
-
 
 
 /*--------------------------------------------------------------------*/
 /*STYLE THE RECIPE*/
 
-
-/*Blog Hero Header:
-- make it the full width of the screen
- */
-li{
-    max-width: 60%;
-    overflow-wrap: normal;
+/*Recipe:
+- set background color to whitesmoke, border radius to 30px
+- make the width 70vw, top/bottom paddings 10vh
+- change the display to a flex column
+*/
+#recipe{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
+
+/*Style the children contents inside Recipe:
+- set the left and right padding to 10vw
+- set the line height to 2em for ease of reading
+*/
+#recipe h3, #recipe h4, #recipe ul, #recipe ol, #recipe img {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    line-height: 2em;
+}
+
+#recipe h4, #recipe img{
+    padding-top: 30px;
+    width: 70%;
+}
+
+#recipe h3{
+    padding-top: 20px;
+    line-height: 1.5em;
+    font-size: 2.8em;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-width: 8px;
+    border-style: none none double none;
+}
+
+/*--------------------------------------------------------------------*/
+/*STYLE THE MORE CARDS*/
+
+/*MORE:
+*/
+
+#more {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 5vh;
+    padding-bottom: 30vh;
+}
+
+#more h4{
+    width: 100%;
+    font-weight: 700;
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+.cards img {
+    object-fit: cover;
+    height: 60%;
+    width: 70%;
+    overflow: hidden;
+}
+
+
+.card {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.card p {
+    max-width: 80%
+}
+
 
 
 
